@@ -1,0 +1,25 @@
+
+
+/Downloads/imdb20230223/
+
+SET GLOBAL local_infile = 1;
+
+
+
+\use imdb
+ util.importTable("/Downloads/imdb20230223/title.ratings.tsv.gz", {"table" : "title_ratings", skipRows: 1, showProgress: true});
+ 
+-------------------------------util.importTable("/Downloads/imdb20230223/title.akas.tsv.gz", {"table" : "title_akas", skipRows: 1, showProgress: true});
+
+util.importTable("/Downloads/imdb20230223/title.akas.tsv/data.tsv", {"table" : "title_akas", skipRows: 1, showProgress: true})
+
+util.importTable("/Downloads/imdb20230223/title.principals.tsv/data.tsv", {"table" : "title_principals", skipRows: 1, showProgress: true})
+
+util.importTable("/Downloads/imdb20230223/name.basics.tsv/data.tsv", {"table" : "name_basics", skipRows: 1, showProgress: true})
+
+util.importTable("/Downloads/imdb20230223/title.basics.tsv/data.tsv", {"table" : "title_basics", skipRows: 1, showProgress: true})
+
+util.importTable("/Downloads/imdb20230223/title.crew.tsv/data.tsv", {"table" : "title_crew", skipRows: 1, showProgress: true})
+--> Total rows affected in imdb.title_crew: Records: 9634768  Deleted: 0  Skipped: 0  Warnings: 2
+
+util.importTable("/Downloads/imdb20230223/title.episode.tsv/data.tsv", {"table" : "title_episode", skipRows: 1, showProgress: true})
